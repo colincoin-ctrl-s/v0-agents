@@ -1,0 +1,319 @@
+/* Netflix-Style CSS with Fonts, Typography, and Media Queries */
+
+/* Import Netflix's primary fonts */
+@import url("https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;700&display=swap");
+
+/* Fallback font stack (Netflix Sans isn't publicly available, so we'll use close alternatives) */
+:root {
+  --netflix-font-primary: "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  --netflix-font-secondary: "Arial", sans-serif;
+
+  /* Netflix Brand Colors */
+  --netflix-red: #e50914;
+  --netflix-dark-red: #b20710;
+  --netflix-black: #000000;
+  --netflix-dark-gray: #141414;
+  --netflix-medium-gray: #333333;
+  --netflix-light-gray: #757575;
+  --netflix-white: #ffffff;
+
+  /* Typography Scale */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+  --font-size-7xl: 4.5rem; /* 72px */
+}
+
+/* Base Typography */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--netflix-font-primary);
+  font-weight: 400;
+  font-size: var(--font-size-base);
+  line-height: 1.4;
+  color: var(--netflix-white);
+  background-color: var(--netflix-black);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1,
+.netflix-h1 {
+  font-family: var(--netflix-font-primary);
+  font-weight: 700;
+  font-size: var(--font-size-5xl);
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+h2,
+.netflix-h2 {
+  font-family: var(--netflix-font-primary);
+  font-weight: 700;
+  font-size: var(--font-size-4xl);
+  line-height: 1.2;
+  margin: 0 0 0.875rem 0;
+  letter-spacing: -0.01em;
+}
+
+h3,
+.netflix-h3 {
+  font-family: var(--netflix-font-primary);
+  font-weight: 600;
+  font-size: var(--font-size-3xl);
+  line-height: 1.3;
+  margin: 0 0 0.75rem 0;
+}
+
+h4,
+.netflix-h4 {
+  font-family: var(--netflix-font-primary);
+  font-weight: 600;
+  font-size: var(--font-size-2xl);
+  line-height: 1.3;
+  margin: 0 0 0.625rem 0;
+}
+
+h5,
+.netflix-h5 {
+  font-family: var(--netflix-font-primary);
+  font-weight: 500;
+  font-size: var(--font-size-xl);
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+}
+
+h6,
+.netflix-h6 {
+  font-family: var(--netflix-font-primary);
+  font-weight: 500;
+  font-size: var(--font-size-lg);
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Hero Title (for main landing page) */
+.netflix-hero-title {
+  font-family: var(--netflix-font-primary);
+  font-weight: 900;
+  font-size: var(--font-size-6xl);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Body Text */
+p,
+.netflix-body {
+  font-family: var(--netflix-font-primary);
+  font-weight: 400;
+  font-size: var(--font-size-base);
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+}
+
+.netflix-body-large {
+  font-size: var(--font-size-lg);
+  line-height: 1.5;
+}
+
+.netflix-body-small {
+  font-size: var(--font-size-sm);
+  line-height: 1.43;
+}
+
+.netflix-caption {
+  font-size: var(--font-size-xs);
+  line-height: 1.33;
+  color: var(--netflix-light-gray);
+}
+
+/* Buttons */
+.netflix-button {
+  font-family: var(--netflix-font-primary);
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  line-height: 1;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.netflix-button-primary {
+  background-color: var(--netflix-red);
+  color: var(--netflix-white);
+}
+
+.netflix-button-primary:hover {
+  background-color: var(--netflix-dark-red);
+}
+
+.netflix-button-secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--netflix-white);
+}
+
+.netflix-button-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Navigation */
+.netflix-nav {
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.01em;
+}
+
+/* Movie/Show Titles */
+.netflix-title-card {
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  line-height: 1.2;
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.netflix-subtitle {
+  font-weight: 400;
+  font-size: var(--font-size-sm);
+  color: var(--netflix-light-gray);
+  line-height: 1.3;
+}
+
+/* Media Queries for Responsive Typography */
+
+/* Mobile Phones (up to 480px) */
+@media screen and (max-width: 480px) {
+  :root {
+    --font-size-base: 0.875rem; /* 14px */
+    --font-size-lg: 1rem; /* 16px */
+    --font-size-xl: 1.125rem; /* 18px */
+    --font-size-2xl: 1.25rem; /* 20px */
+    --font-size-3xl: 1.5rem; /* 24px */
+    --font-size-4xl: 1.875rem; /* 30px */
+    --font-size-5xl: 2.25rem; /* 36px */
+    --font-size-6xl: 2.75rem; /* 44px */
+  }
+
+  body {
+    font-size: var(--font-size-base);
+  }
+
+  .netflix-hero-title {
+    font-size: var(--font-size-5xl);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .netflix-button {
+    padding: 0.625rem 1.5rem;
+    font-size: var(--font-size-sm);
+  }
+
+  h1,
+  .netflix-h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h2,
+  .netflix-h2 {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --font-size-base: 0.9375rem; /* 15px */
+    --font-size-5xl: 2.75rem; /* 44px */
+    --font-size-6xl: 3.25rem; /* 52px */
+  }
+
+  .netflix-hero-title {
+    font-size: var(--font-size-6xl);
+  }
+}
+
+/* Small Laptops (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .netflix-hero-title {
+    font-size: var(--font-size-6xl);
+  }
+}
+
+/* Large Screens (1025px to 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .netflix-hero-title {
+    font-size: var(--font-size-7xl);
+  }
+}
+
+/* Extra Large Screens (1441px and up) */
+@media screen and (min-width: 1441px) {
+  :root {
+    --font-size-6xl: 4.5rem; /* 72px */
+    --font-size-7xl: 5.5rem; /* 88px */
+  }
+
+  .netflix-hero-title {
+    font-size: var(--font-size-7xl);
+  }
+}
+
+/* High DPI / Retina Displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Dark mode support (though Netflix is primarily dark) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --netflix-white: #ffffff;
+    --netflix-light-gray: #b3b3b3;
+  }
+}
+
+/* Accessibility - Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .netflix-button {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    font-family: "Times New Roman", serif;
+    color: #000000;
+    background: #ffffff;
+  }
+
+  .netflix-button {
+    border: 1px solid #000000;
+    background: transparent;
+    color: #000000;
+  }
+}
